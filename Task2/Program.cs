@@ -9,7 +9,7 @@ Console.WriteLine("Напишите другое целое число");
 int second = Convert.ToInt32(Console.ReadLine());
 if(first>second)
 {
-    Console.Write(first);
+    Console.Write($"Максимальное из двух чисел {first}");
 }
 else 
 Console.Write($"Максимальное из двух чисел {second}"); 
