@@ -2,4 +2,23 @@
 //645 -> 5
 //78 -> третьей цифры нет
 //32679 -> 6
-
+Console.WriteLine("Введите число ");
+int number = Convert.ToInt32(Console.ReadLine());
+int ThirthDigit(int num)
+{
+    if(number<100) 
+    {
+        return 0;
+    }  
+    while (number > 1000) number = number / 10;
+    int number1 = number;
+    int find = number1 % 10;
+    return find;
+}
+ThirthDigit(number);
+int digit3 = ThirthDigit(number);
+if(digit3 == 0) Console.WriteLine($"{number} -> третьей цифры нет");
+else Console.WriteLine($"{number} -> {digit3}");
+//ThirthDigit(number);
+//int digit3 = ThirthDigit(number);
+//Console.WriteLine($"{number} -> {digit3}");

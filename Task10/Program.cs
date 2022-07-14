@@ -4,10 +4,10 @@
 //918 -> 1
 Console.WriteLine("Введите трезначное число ");
 int number = Convert.ToInt32(Console.ReadLine());
-int ShowSecondDigit(int num) 
+int ShowSecondDigit(int num)
 {
-    int lastDigit = number/10;
-    int secondDigit = lastDigit%10;
+    int lastDigit = number / 10;
+    int secondDigit = lastDigit % 10;
     return secondDigit;
 }
 ShowSecondDigit(number);
