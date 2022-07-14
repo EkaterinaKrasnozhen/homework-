@@ -19,6 +19,3 @@ ThirthDigit(number);
 int digit3 = ThirthDigit(number);
 if(digit3 == 0) Console.WriteLine($"{number} -> третьей цифры нет");
 else Console.WriteLine($"{number} -> {digit3}");
-//ThirthDigit(number);
-//int digit3 = ThirthDigit(number);
-//Console.WriteLine($"{number} -> {digit3}");
