@@ -8,7 +8,7 @@ int ThirthDigit(int num)
 {
     if(number<100) 
     {
-        return 0;
+        return -1;
     }  
     while (number > 1000) number = number / 10;
     int number1 = number;
@@ -17,5 +17,5 @@ int ThirthDigit(int num)
 }
 ThirthDigit(number);
 int digit3 = ThirthDigit(number);
-if(digit3 == 0) Console.WriteLine($"{number} -> третьей цифры нет");
+if(digit3 == -1) Console.WriteLine($"{number} -> третьей цифры нет");
 else Console.WriteLine($"{number} -> {digit3}");
