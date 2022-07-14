@@ -8,13 +8,9 @@ int number = Convert.ToInt32(Console.ReadLine());
 int DayWeek(int num)
 {
     if (number == 6 || number == 7) Console.WriteLine($"{number}-> да");
+      else if (number == 1 || number == 2 || number == 3 || number == 4 || number == 5) Console.WriteLine($"{number} -> нет");
+       else if (number < 1 || number >7) Console.WriteLine($"{number} не является числом от 1 до 7");
 return number;
-
-    
-    if (number == 1 || number == 2 || number == 3 || number == 4 || number == 5) Console.WriteLine($"{number} -> нет");
-return -1;
 }            
 DayWeek(number);
 int dayWeek = DayWeek(number);
-if (dayWeek == -1) Console.WriteLine($"{number} не является числом от 1 до 7");
-Console.WriteLine(dayWeek);
