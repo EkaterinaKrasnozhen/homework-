@@ -12,4 +12,4 @@ int ShowSecondDigit(int num)
 }
 ShowSecondDigit(number);
 int find = ShowSecondDigit(number);
-Console.WriteLine(find);
+Console.WriteLine($"{number} -> {find}");
