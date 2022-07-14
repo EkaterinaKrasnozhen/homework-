@@ -14,3 +14,4 @@ return number;
 }            
 DayWeek(number);
 int dayWeek = DayWeek(number);
+//Андрей, подскажите, почему у меня два раза пишется ответ?
