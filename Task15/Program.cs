@@ -3,7 +3,7 @@
 //6 -> да
 //7 -> да
 //1 -> нет
-Console.WriteLine("Введите цифру от 1 до 7 включительно ");
+Console.Write("Введите цифру от 1 до 7 включительно ");
 int number = Convert.ToInt32(Console.ReadLine());
 int DayWeek(int num)
 {
@@ -13,5 +13,5 @@ int DayWeek(int num)
 return number;
 }            
 DayWeek(number);
-int dayWeek = DayWeek(number);
+
 //Андрей, подскажите, почему у меня два раза пишется ответ?
