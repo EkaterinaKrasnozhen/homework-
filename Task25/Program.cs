@@ -4,19 +4,19 @@
 //3, 5 -> 243 (3⁵)
 
 //2, 4 -> 16
-Console.WriteLine("Введите число А:" );
+Console.WriteLine("Введите число А:");
 int a = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Введите число B:" );
+Console.WriteLine("Введите число B:");
 int b = Convert.ToInt32(Console.ReadLine());
-int Degree(int first, int second) 
+int Degree(int first, int second)
 {
     int count = 1;
     int degree = first;
-while (count < second)
-{
-    degree=degree*first;
-    count++;
+    while (count < second)
+    {
+        degree = degree * first;
+        count++;
+    }
+    return degree;
 }
-return degree;
-}
-Console.WriteLine ($" {a}, {b} -> {Degree(a,b)}");
+Console.Write($"-> {Degree(a, b)}");

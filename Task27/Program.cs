@@ -18,4 +18,4 @@ int DigitSum(int num)
     }
     return sum;
 }
-Console.WriteLine(DigitSum(number));
+Console.Write($" -> {DigitSum(number)}");
