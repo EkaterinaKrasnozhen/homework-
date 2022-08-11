@@ -13,12 +13,12 @@ int[] CreateArrayRndInt(int size, int min, int max)
     }
     return arr;
 }
-int ShowEvenNum(int [] array) 
+int ShowEvenNum(int[] array)
 {
     int count = 0;
     for (int i = 0; i < array.Length; i++)
     {
-        if (array[i]%2==0) count++;
+        if (array[i] % 2 == 0) count++;
     }
     return count;
 }
@@ -29,6 +29,6 @@ void PrintArray(int[] num)
         if (i < num.Length) Console.Write(num[i] + " ");
     }
 }
-int [] arr = CreateArrayRndInt(4,100,1000);
+int[] arr = CreateArrayRndInt(4, 100, 1000);
 PrintArray(arr);
 Console.WriteLine("-> " + ShowEvenNum(arr));

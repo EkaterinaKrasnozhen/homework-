@@ -15,12 +15,12 @@ int[] CreateArrayRndInt(int size, int min, int max)
     }
     return arr;
 }
-int FindOddPos(int [] arr) 
+int FindOddPos(int[] arr)
 {
     int sum = 0;
     for (int i = 0; i < arr.Length; i++)
     {
-        if (i%2 == 1) sum = sum+arr[i];
+        if (i % 2 == 1) sum = sum + arr[i];
     }
     return sum;
 }
@@ -31,7 +31,7 @@ void PrintArray(int[] num)
         if (i < num.Length) Console.Write(num[i] + " ");
     }
 }
-int [] array = CreateArrayRndInt(6, -10, 99);
+int[] array = CreateArrayRndInt(6, -10, 99);
 PrintArray(array);
 int result = FindOddPos(array);
 Console.Write("-> " + result);
