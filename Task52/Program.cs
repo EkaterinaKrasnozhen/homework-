@@ -31,33 +31,29 @@ void PrintMatrix(int[,] matr)
         Console.WriteLine();
     }
 }
-double ArithSumColumn(int[,] matr, int plusRow)
+double ArithSumColumn(int[,] matr, int column)
 {
-    int j = plusRow;
     double result = 0;
     double sum = 0;
     for (int i = 0; i < matr.GetLength(0); i++)
     {
         {
-            sum += matr[i, j];
-            result = Math.Round(sum / matr.GetLength(0),1);
-            
+            sum += matr[i, column];
+            result = Math.Round(sum / matr.GetLength(0), 1);
         }
-        
     }
     return result;
-    
-    
-    
 }
 
 int[,] matNums = GetMatrix(3, 4);
 PrintMatrix(matNums);
 Console.WriteLine("Среднее арифметическое столбцов ");
-Console.Write (ArithSumColumn(matNums,0));
-Console.Write("  ");
-Console.Write (ArithSumColumn(matNums,1));
-Console.Write("  ");
-Console.Write (ArithSumColumn(matNums,2));
-Console.Write("  ");
-Console.Write (ArithSumColumn(matNums,3));
+Console.Write("[ ");
+Console.Write(ArithSumColumn(matNums, 0));
+Console.Write("|");
+Console.Write(ArithSumColumn(matNums, 1));
+Console.Write("|");
+Console.Write(ArithSumColumn(matNums, 2));
+Console.Write("|");
+Console.Write(ArithSumColumn(matNums, 3));
+Console.Write(" ]");
