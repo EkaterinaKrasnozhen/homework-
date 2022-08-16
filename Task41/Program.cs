@@ -6,7 +6,7 @@
 -1, -7, 567, 89, 223-> 3 */
 
 Console.WriteLine("Введите числа через запятую или пробел: ");
-string[] text = Console.ReadLine().Split(',', ' ');
+string[] text = Console.ReadLine()!.Split(',', ' ');
 int[] StringCharToArray(string[] numString)
 {
     int[] arrayChar = new int[numString.Length];

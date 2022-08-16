@@ -37,32 +37,19 @@ void PrintMatrix(int[,] matr)
         Console.WriteLine();
     }
 }
-int GetNumMatrix(int[,] matr, int userinput1, int userinput2)
-{
-    int find = 0;
-    for (int i = 0; i < matr.GetLength(0); i++)
-    {
-        for (int j = 0; j < matr.GetLength(1); j++)
-        {
-            if (matr[i, j] == matr[userinput1 - 1, userinput2 - 1])
-            {
-                find = matr[userinput1 - 1, userinput2 - 1];
-                break;
-                
-            }
-            else if (userinput1>matr.GetLength(0) || userinput2>matr.GetLength(1)) find = -1;
-            
-        }
-        
-    }
-    return find;
-}
+
 int[,] matrNum = GetMatrix(3, 4);
 PrintMatrix(matrNum);
 Console.WriteLine("Введите номер строки в таблице:");
 int row = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("Введите номер столбца в таблице:");
 int column = Convert.ToInt32(Console.ReadLine());
-int result = GetNumMatrix(matrNum, row, column);
-//if (result == -1) Console.Write("-> такого числа в массиве нет");
-Console.Write(result);
+
+bool GetNumMatrix(int[,] matr, int userinput1, int userinput2)
+{
+    int find = matr[userinput1 - 1, userinput2 - 1];
+    if (userinput1>matr.GetLength(0) || userinput2>matr.GetLength(1)) return false;
+    else return true;
+} 
+if (GetNumMatrix (matrNum,row,column)) Console.Write(matrNum[row-1,column-1]);
+else Console.Write("нет");
