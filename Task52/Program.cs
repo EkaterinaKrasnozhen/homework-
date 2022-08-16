@@ -35,23 +35,22 @@ double[] ArithSumColumn(int[,] matr)
 {
     double[] result = new double[matr.GetLength(1)];
     double sum = 0;
-int i = 0;
-int j = 0;
-    
-
-        if (j < matr.GetLength(1))
+    int i = 0;
+    int j = 0;
+    while (j < matr.GetLength(1))
+    {
+        while (i < matr.GetLength(0))
         {
             sum += matr[i, j];
-            result[j] = Math.Round(sum / matr.GetLength(0), 1);
             i++;
-            j++;
-        
+            
+            
         }
-        
-        i = 0;
-        
-
-    
+        result[j] = Math.Round(sum / matr.GetLength(0), 1);
+        j++;
+        i=0;
+        sum=0;
+    }
 
     return result;
 }
