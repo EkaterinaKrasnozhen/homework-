@@ -48,26 +48,10 @@ int column = Convert.ToInt32(Console.ReadLine());
 int FindNumMatrix(int[,] matr, int a, int b)
 
 {
-    int res = 0;
-    for (int i = 0; i < matr.GetLength(0); i++)
-    {
-        for (int j = 0; j < matr.GetLength(1); j++)
-
-            if (matr[i, j] == matr[a, b])
-            {
-                res = matr[a, b];return res;
-            }
-            
-            else res = -1;return res;
-
-
-
-
-    }
- return res;   
+    if (a > matr.GetLength(0) || b > matr.GetLength(1)) return -1;
+    else return matr[a - 1, b - 1];
 }
+int result = FindNumMatrix(matrNum, row, column);
+if (result == -1) Console.Write("-> такого числа в массиве нет");
+else Console.WriteLine(result);
 
-
-Console.WriteLine(FindNumMatrix(matrNum, row, column));
-/* if (GetNumMatrix (matrNum,row,column)) Console.Write(matrNum[row-1,column-1]);
-else Console.Write("нет"); */
