@@ -52,9 +52,7 @@ void PrintMatrix(int[,,] matr)
         {
             for (int z = 0; z < matr.GetLength(2); z++)
             {
-
                 Console.Write($"{matr[i, j, z],3} ({i},{j},{z}) ");
-
             }
         }
         Console.WriteLine();

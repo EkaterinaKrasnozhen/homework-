@@ -8,12 +8,13 @@
 int[,] GetMatrix(int m, int n)
 {
     int[,] matrix = new int[m, n];
-    Random rnd = new Random();
+    int count = 1;
     for (int i = 0; i < matrix.GetLength(0); i++)
     {
         for (int j = 0; j < matrix.GetLength(1); j++)
         {
-            matrix[i, j] = rnd.Next(1, 8);
+            matrix[i, j] = count;
+            count++;
         }
     }
     return matrix;
@@ -24,45 +25,65 @@ void PrintMatrix(int[,] matr)
     {
         for (int j = 0; j < matr.GetLength(1); j++)
         {
-            if (j == 0) Console.Write("[");
-            if (j < matr.GetLength(1) - 1) Console.Write($"{matr[i, j],3}|");
-            else Console.Write($"{matr[i, j],3}]");
+            Console.Write($"{matr[i, j],4}");
         }
         Console.WriteLine();
     }
 }
-int[,] matrnew = GetMatrix(4, 4);
-PrintMatrix(matrnew);
-/* void SpiralMatrix(int[,] matr)
+int[,] SpiralMatrix(int[,] matr)
 {
+    int[,] spiral = new int[matr.GetLength(0), matr.GetLength(1)];
+    int n = 0;
+    int m = 0;
     int i = 0;
     int j = 0;
     while (j < matr.GetLength(1))
     {
-        Console.Write($"{matr[i, j],3}]");
+        while (m < spiral.GetLength(1))
+        {
+            spiral[n, m] = matr[i, j];
+            j++;
+            m++;
+        }
+    }
+    m = spiral.GetLength(0) - 1;
+    i = 1;
+    n = 1;
+    j = 0;
+    while (n < spiral.GetLength(0))
+    {
+        while (j < matr.GetLength(1) - 1)
+        {
+            spiral[n, m] = matr[i, j];
+            n++;
+            j++;
+        }
+    }
+    n = spiral.GetLength(1) - 1;
+    m = spiral.GetLength(1) - 1;
+    i = 1;
+    j = matr.GetLength(0) - 2;
+    while (j < matr.GetLength(1))
+    {
+        spiral[n, m] = matr[i, j];
+        m--;
+        j++;
+    }
+    n = spiral.GetLength(1) - 1;
+    m = spiral.GetLength(1) - 3;
+    i = 2;
+    j = 0;
+    while (m>=0)
+    {
+        spiral[n, m] = matr[i, j];
+        m--;
         j++;
     }
 
+    return spiral;
 }
-SpiralMatrix(matrnew); */
-void SortMatrixRow(int[,] matrix)
-{
-   for (int i = 0; i < matrix.GetLength(0); i++)
-   {
-    for (int j = 0; j < matrix.GetLength(1) - 1; j++)
-    {
-        int minPosition = j;
-        for (int m = j + 1; m < matrix.GetLength(1); m++)
-        {
-            if (matrix[i, m] < matrix[i, minPosition]) minPosition = m;
-        }
-        int temporary = matrix[i, j];
-        matrix[i, j] = matrix[i, minPosition];
-        matrix[i, minPosition] = temporary;
-    }
-   }
-
-}
-Console.WriteLine();
-SortMatrixRow(matrnew);
+int[,] matrnew = GetMatrix(4, 4);
 PrintMatrix(matrnew);
+Console.WriteLine();
+int[,] spiral1 = SpiralMatrix(matrnew);
+PrintMatrix(spiral1);
