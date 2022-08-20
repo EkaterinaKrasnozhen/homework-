@@ -79,6 +79,36 @@ int[,] SpiralMatrix(int[,] matr)
         m--;
         j++;
     }
+n = spiral.GetLength(0)-2;
+m = 0;
+i = matr.GetLength(1)-2;
+j = matr.GetLength(0)-2;
+while (n>spiral.GetLength(0)-4)
+{
+    spiral[n, m] = matr[i, j];
+    n--;
+    j++;
+}
+n = spiral.GetLength(0)-3;
+m = spiral.GetLength(1) -3;
+i = matr.GetLength(0)-1;
+j = 0;
+while (m<spiral.GetLength(1)-1)
+{
+    spiral[n, m] = matr[i, j];
+    m++;
+    j++;
+}
+n = spiral.GetLength(0)-2;
+m = spiral.GetLength(1)-2;
+i = matr.GetLength(0)-1;
+j = matr.GetLength(1)-2;
+while (j<matr.GetLength(1))
+{
+   spiral[n, m] = matr[i, j];
+   m--;
+   j++; 
+}
 
     return spiral;
 }
