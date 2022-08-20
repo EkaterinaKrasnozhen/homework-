@@ -31,14 +31,38 @@ void PrintMatrix(int[,] matr)
         Console.WriteLine();
     }
 }
-int [,] matrnew = GetMatrix(4,4);
+int[,] matrnew = GetMatrix(4, 4);
 PrintMatrix(matrnew);
-void SpiralMatrix(int[,] matr)
+/* void SpiralMatrix(int[,] matr)
 {
-int i =0;
-int j =0;
-while (j<matr.GetLength(1)) 
-{
+    int i = 0;
+    int j = 0;
+    while (j < matr.GetLength(1))
+    {
+        Console.Write($"{matr[i, j],3}]");
+        j++;
+    }
 
 }
+SpiralMatrix(matrnew); */
+void SortMatrixRow(int[,] matrix)
+{
+   for (int i = 0; i < matrix.GetLength(0); i++)
+   {
+    for (int j = 0; j < matrix.GetLength(1) - 1; j++)
+    {
+        int minPosition = j;
+        for (int m = j + 1; m < matrix.GetLength(1); m++)
+        {
+            if (matrix[i, m] < matrix[i, minPosition]) minPosition = m;
+        }
+        int temporary = matrix[i, j];
+        matrix[i, j] = matrix[i, minPosition];
+        matrix[i, minPosition] = temporary;
+    }
+   }
+
 }
+Console.WriteLine();
+SortMatrixRow(matrnew);
+PrintMatrix(matrnew);
