@@ -43,8 +43,6 @@ double[] ArithSumColumn(int[,] matr)
         {
             sum += matr[i, j];
             i++;
-            
-            
         }
         result[j] = Math.Round(sum / matr.GetLength(0), 1);
         j++;
