@@ -32,7 +32,7 @@ void PrintMatrix(int[,,] matr)
             for (int z = 0; z < matr.GetLength(2); z++)
             {
             
-            if (z < matr.GetLength(1)) Console.Write($"{matr[i, j, z],3} ({i},{j},{z}) ");
+            Console.Write($"{matr[i, j, z],3} ({i},{j},{z}) ");
             
             }
         }
