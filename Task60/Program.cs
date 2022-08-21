@@ -5,45 +5,27 @@
 
 12(0,0,0) 22(0,0,1)
 45(1,0,0) 53(1,0,1) */
-int[,,] GetMatrix(int m, int n, int z)
+
+
+/* int [,,] RandomValue(int m, int n, int z)
 {
-    int[,,] matrix = new int[m, n, z];
-    Random rnd = new Random();
+    int[, ,] matrix = new int[m, n, z];
+    int rnd = new int [,,] {1,2,3,4,5,6,7,8,9,0,10,11,12,13,14,15};
     for (int i = 0; i < matrix.GetLength(0); i++)
     {
         for (int j = 0; j < matrix.GetLength(1); j++)
         {
-            for (int k = 0; k < matrix.GetLength(2); k++)
+            for (int l = 0; l < matrix.GetLength(2); l++)
             {
-                matrix[i, j, k] = rnd.Next(1, 45);
+               matrix[i, j, l] = rnd;
             }
+            
         }
     }
     return matrix;
 }
-
-int[,,] matr3 = GetMatrix(2, 2, 2);
-void RandomMatr(int[,,] nums)
-{
-    int n = 1;
-    int m = 1;
-    int z = 1;
-    int i = 0;
-    int j = 0;
-    int k = 0;
-    Random nrd = new Random();
-    while (i < nums.GetLength(0))
-    {
-        while (n < nums.GetLength(0))
-        {
-            if (nums[i, j, k] == nums[n, m, z]) nums[i, j, k] = nrd.Next(1, 45);
-            n++; m++; z++;
-        }
-        i++; j++; k++;
-    }
-
-    
-}
+int [, ,] matr3d = RandomValue(2,2,2); */
+int[, ,] matrix = new int[2, 2, 2]{{{1,2},{3,4}},{{5,6},{7,8,}}};//{{{1,2,3},{4,5,6}},{{7,8,9},{10,11,12}}};
 void PrintMatrix(int[,,] matr)
 {
     for (int i = 0; i < matr.GetLength(0); i++)
@@ -58,5 +40,5 @@ void PrintMatrix(int[,,] matr)
         Console.WriteLine();
     }
 }
-RandomMatr(matr3);
-PrintMatrix(matr3);
+
+PrintMatrix(matrix);
