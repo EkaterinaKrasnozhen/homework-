@@ -1,20 +1,10 @@
-﻿/* Задача 58: Задайте две матрицы. 
-Напишите программу, которая будет находить произведение двух матриц.
-Например, заданы 2 массива:
-1 4 7 2
-5 9 2 3
-8 4 2 4
-5 2 6 7
-и
-1 5 8 5
-4 9 4 2
-7 2 2 6
-2 3 4 7
-Их произведение будет равно следующему массиву:
-1 20 56 10
-20 81 8 6
-56 8 4 24
-10 6 24 49 */
+﻿/* Задача 58: Задайте две матрицы. Напишите программу, которая будет находить произведение двух матриц.
+Например, даны 2 матрицы:
+2 4 | 3 4
+3 2 | 3 3
+Результирующая матрица будет:
+18 20
+15 18 */
 int[,] GetMatrix(int m, int n)
 {
     int[,] matrix = new int[m, n];
@@ -28,8 +18,25 @@ int[,] GetMatrix(int m, int n)
     }
     return matrix;
 }
-int[,] matrix1 = GetMatrix(2, 3);
-int[,] matrix2 = GetMatrix(2, 3);
+int[,] matrix1 = GetMatrix(2, 2);
+int[,] matrix2 = GetMatrix(2, 2);
+void PrintMatrixTwo(int[,] matr1, int[,] matr2)
+{
+    for (int i = 0; i < matr1.GetLength(0); i++)
+    {
+        for (int j = 0; j < matr1.GetLength(1); j++)
+        {
+            if (j < matr1.GetLength(1) - 1) Console.Write($"{matr1[i, j],3}");
+            else Console.Write($"{matr1[i, j],3} |");
+        }
+
+        for (int j = 0; j < matr1.GetLength(1); j++)
+        {
+            Console.Write($"{matr2[i, j],3}");
+        }
+        Console.WriteLine();
+    }
+}
 void PrintMatrix(int[,] matr)
 {
     for (int i = 0; i < matr.GetLength(0); i++)
@@ -43,18 +50,30 @@ void PrintMatrix(int[,] matr)
         Console.WriteLine();
     }
 }
-PrintMatrix(matrix1);
+PrintMatrixTwo(matrix1, matrix2);
 Console.WriteLine();
-PrintMatrix(matrix2);
 int[,] MultiMatrix(int[,] matr1, int[,] matr2)
 {
     int[,] multimatr = new int[matr1.GetLength(0), matr1.GetLength(1)];
-    for (int i = 0; i < multimatr.GetLength(0); i++)
+    int n = 0;
+    int m = 0;
+    int i = 0;
+    int j = 0;
+    int k = 0;
+    int l = 0;
+
+    while (k < multimatr.GetLength(0))
     {
-        for (int j = 0; j < multimatr.GetLength(1); j++)
+        while (n < matr2.GetLength(1))
         {
-            multimatr[i, j] = matr1[i, j] * matr2[i, j];
+            multimatr[k, l] = matr1[i, j] * matr2[m, n] + matr1[i, j + 1] * matr2[m + 1, n];
+            n++;
+            l++;
         }
+        k++;
+        i++;
+        n = 0;
+        l = 0;
     }
     return multimatr;
 }
