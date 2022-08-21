@@ -48,14 +48,14 @@ void SortMatrixRow(int[,] matrix)
     {
         for (int j = 0; j < matrix.GetLength(1) - 1; j++)
         {
-            int minPosition = j;
+            int maxPosition = j;
             for (int m = j + 1; m < matrix.GetLength(1); m++)
             {
-                if (matrix[i, m] < matrix[i, minPosition]) minPosition = m;
+                if (matrix[i, m] > matrix[i, maxPosition]) maxPosition = m;
             }
             int temporary = matrix[i, j];
-            matrix[i, j] = matrix[i, minPosition];
-            matrix[i, minPosition] = temporary;
+            matrix[i, j] = matrix[i, maxPosition];
+            matrix[i, maxPosition] = temporary;
         }
         i++;
     }
