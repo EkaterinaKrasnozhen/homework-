@@ -5,12 +5,11 @@ N = 8 -> "8, 7, 6, 5, 4, 3, 2, 1"
  */
 Console.Write("Введите число ");
 int num = Convert.ToInt32(Console.ReadLine());
-void SumNaturalNumaber (int number) 
+void SumNaturalNumaber(int number)
 {
-if (number == 0) return;
- 
-Console.Write($"{number} ");
- NaturalNumaber(number -1);
+    if (number == 0) return;
+    Console.Write($"{number} ");
+    NaturalNumaber(number - 1);
 }
 Console.Write($"N = {num} -> ");
 if (num == 0) Console.Write("0");

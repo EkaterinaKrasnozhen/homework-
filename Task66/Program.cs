@@ -7,9 +7,8 @@ Console.Write("Введите число ");
 int num1 = Convert.ToInt32(Console.ReadLine());
 Console.Write("Введите второе число, больше первого ");
 int num2 = Convert.ToInt32(Console.ReadLine());
-int NaturalNumaber(int number1, int number2) //4,3,2,1 b 0 выход
+int NaturalNumaber(int number1, int number2) 
 {
-
     if (number1 == number2)
     {
         Console.WriteLine(number1);
