@@ -9,7 +9,7 @@ void SumNaturalNumaber(int number)
 {
     if (number == 0) return;
     Console.Write($"{number} ");
-    NaturalNumaber(number - 1);
+    SumNaturalNumaber(number - 1);
 }
 Console.Write($"N = {num} -> ");
 if (num == 0) Console.Write("0");
