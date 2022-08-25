@@ -7,25 +7,26 @@
 45(1,0,0) 53(1,0,1) */
 
 
-/* int [,,] RandomValue(int m, int n, int z)
+int [,,] RandomValue(int m, int n, int z)
 {
     int[, ,] matrix = new int[m, n, z];
-    int rnd = new int [,,] {1,2,3,4,5,6,7,8,9,0,10,11,12,13,14,15};
+    int num = 15;
     for (int i = 0; i < matrix.GetLength(0); i++)
     {
         for (int j = 0; j < matrix.GetLength(1); j++)
         {
             for (int l = 0; l < matrix.GetLength(2); l++)
             {
-               matrix[i, j, l] = rnd;
+               matrix[i, j, l] = num;
+               num+=5;
             }
             
         }
     }
     return matrix;
 }
-int [, ,] matr3d = RandomValue(2,2,2); */
-int[, ,] matrix = new int[2, 2, 2]{{{1,2},{3,4}},{{5,6},{7,8,}}};//{{{1,2,3},{4,5,6}},{{7,8,9},{10,11,12}}};
+int [, ,] matr3d = RandomValue(2,2,2); 
+
 void PrintMatrix(int[,,] matr)
 {
     for (int i = 0; i < matr.GetLength(0); i++)
@@ -40,5 +41,5 @@ void PrintMatrix(int[,,] matr)
         Console.WriteLine();
     }
 }
-
-PrintMatrix(matrix);
+ 
+PrintMatrix(matr3d);
